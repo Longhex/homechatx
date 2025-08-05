@@ -1,0 +1,139 @@
+---
+const sections = [
+  {
+    title: "All pages",
+    links: [
+      { name: "Home", href: "/" },
+      { name: "About", href: "/about" },
+      { name: "Features", href: "/features" },
+      { name: "Pricing", href: "/pricing" },
+      { name: "FAQ", href: "/faq" },
+      { name: "Contact", href: "/contact" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { name: "Careers", href: "/careers" },
+      { name: "Press", href: "/press" },
+      { name: "Blog", href: "/blog" },
+      { name: "Partners", href: "/partners" },
+      { name: "Terms", href: "/terms" },
+      { name: "Privacy", href: "/privacy" },
+    ],
+  },
+  {
+    title: "Developers",
+    links: [
+      { name: "Documentation", href: "/docs" },
+      { name: "API Reference", href: "/api" },
+      { name: "Status", href: "/status" },
+      { name: "Github", href: "https://www.arrowhitech.com/contact-us/" },
+      { name: "Changelog", href: "/changelog" },
+    ],
+  },
+  {
+    title: "Support",
+    links: [
+      { name: "Help Center", href: "/help" },
+      { name: "Community", href: "/community" },
+      { name: "Contact Support", href: "/support" },
+      { name: "Live Chat", href: "/chat" },
+    ],
+  },
+];
+---
+
+<footer class="bg-gradient-to-br from-yellow-50 via-white to-yellow-100 border-base-200">
+  <div class="px-6 md:px-12 lg:px-24 py-20 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+      <div class="md:col-span-1">
+        <a href="/" class="inline-flex items-center gap-3">
+          <img width="200" src="/logo.svg" alt="logo" />
+        </a>
+        <p class="mt-4 text-sm text-gray-500">
+          Enterprise AI offerings, a powerful agent platform, and the no-code tools to get value from AI.
+        </p>
+      </div>
+
+      <div class="md:col-span-2">
+        <h3 class="text-lg font-semibold text-black mb-2">
+          Ready to Build Your AI Dream Team?
+        </h3>
+        <p class="text-sm text-gray-500 mb-4">
+          Let’s turn your ideas into working AI — fast, secure, and scalable.
+        </p>
+
+        <form 
+          class="flex flex-col sm:flex-row items-center gap-3 w-full"
+          onsubmit="handleSubmit(event)"
+        >
+          <input
+            id="email"
+            type="email"
+            placeholder="Your email address"
+            required
+            class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          />
+          <input
+            id="phone"
+            type="tel"
+            placeholder="Phone number"
+            required
+            class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          />
+          <button
+            type="submit"
+            class="px-6 py-2 w-full md:w-auto rounded-md bg-black text-white hover:bg-blue-700 transition">
+            Subscribe
+          </button>
+        </form>
+        <p id="formSuccess" class="text-green-600 text-sm mt-2 hidden">Thank you! We’ll be in touch.</p>
+      </div>
+    </div>
+
+    <div class="pt-12 mt-12 border-t border-base-200 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
+      <p>&copy; {new Date().getFullYear()} aihive.global. Originally by AHT Tech</p>
+      <p>
+        Additionally Development by 
+        <a href="https://chatx.vn/" class="underline text-blue-600 hover:text-blue-800">Chatx</a>
+      </p>
+    </div>
+  </div>
+
+  <script is:inline>
+    async function handleSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+
+      const content = `New Contact\\nEmail: ${email}\\nPhone: ${phone}`;
+
+      try {
+        await fetch("https://open.larksuite.com/open-apis/bot/v2/hook/e7acceee-c057-402f-9cad-974088e29d3b", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            msg_type: "text",
+            content: {
+              text: content,
+            },
+          }),
+        });
+
+        // Hiển thị thông báo thành công
+        document.getElementById("formSuccess").classList.remove("hidden");
+
+        // Reset form
+        document.getElementById("email").value = "";
+        document.getElementById("phone").value = "";
+
+      } catch (error) {
+        alert("There was an error submitting the form. Please try again later.");
+        console.error(error);
+      }
+    }
+  </script>
+</footer>

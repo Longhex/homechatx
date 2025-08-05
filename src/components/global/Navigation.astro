@@ -1,0 +1,167 @@
+<header class=" sticky top-0 z-50 bg-white border-b border-black/5">
+  <div class="w-full mx-auto lg:px-12 px-8 max-w-7xl lg:px-16">
+    <div
+      x-data="{ open: false }"
+      class="relative flex flex-col w-full py-5 mx-auto bg-white lg:items-center lg:justify-between lg:flex-row lg:px-6">
+      <div class="flex flex-row items-center justify-between lg:justify-start">
+        <a href="/" class="text-black inline-flex items-center gap-3">
+          <img width="125" src="/logo.svg" alt="logo" />
+        
+        </a>
+        <button
+          @click="open = !open"
+          :aria-expanded="open.toString()"
+          aria-controls="main-navigation"
+          aria-label="Toggle navigation menu"
+          class="inline-flex items-center justify-center p-2 text-base-400 hover:text-black focus:outline-none focus:text-black lg:hidden">
+          <svg
+            :class="{'rotate-90': open}"
+            class="w-6 h-6 transition-transform duration-300 ease-in-out"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path
+              x-show="!open"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16">
+            </path>
+            <path
+              x-show="open"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12">
+            </path>
+          </svg>
+        </button>
+      </div>
+      <nav
+        :class="{'h-auto': open, 'h-0': !open}"
+        id="main-navigation"
+        class="flex-col items-center flex-grow gap-4 lg:gap-8 flex overflow-hidden lg:pb-0 lg:flex lg:justify-end lg:h-auto lg:flex-row">
+        <a
+          class="text-sm text-black transition duration-300 hover:text-blue-600 lg:ml-auto"
+          href="/#features">
+          Features
+        </a>
+        <a
+          href="/"
+          class="text-sm text-black transition duration-300 hover:text-blue-600 relative">
+          Updates
+          <span
+            class="bg-red-500 ms-1 text-white text-[10px] px-2 py-1 rounded-full">
+            NEW
+          </span>
+        </a>
+        <a
+          href="/"
+          class="text-sm text-black transition duration-300 hover:text-blue-600 relative">
+          Changelog
+          <sup
+            class="ml-1 inline-block mt-1 w-1.5 h-1.5 bg-green-500 rounded-full">
+          </sup>
+        </a>
+
+        <a
+          href="/faq"
+          class="text-sm text-black transition duration-300 hover:text-blue-600 relative">
+          Faq
+        </a>
+
+        <div class="language-selector">
+        <button class="language-toggle">Language</button>
+        <ul class="language-options">
+            <li><a href="https://www.aihive.global/" target="_blank">English</a></li>
+            <li><a href="https://vi.aihive.global/" target="_blank">Tiếng Việt</a></li>
+            <li><a href="https://jp.aihive.global/" target="_blank">日本語</a></li>
+            <li><a href="https://kr.aihive.global/" target="_blank">한국어</a></li>
+        </ul>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const languageToggleButton = document.querySelector('.language-toggle');
+            const languageOptions = document.querySelector('.language-options');
+            const languageLinks = document.querySelectorAll('.language-options li a');
+
+            // Toggle the visibility of language options on button click
+            languageToggleButton.addEventListener('click', function(event) {
+                event.stopPropagation(); // Ngăn chặn sự kiện nổi lên đến cửa sổ
+                languageOptions.style.display = languageOptions.style.display === 'block' ? 'none' : 'block';
+            });
+
+            // Close the dropdown if clicking outside
+            window.addEventListener('click', function() {
+                languageOptions.style.display = 'none'; // Ẩn các tùy chọn nếu nhấp bên ngoài
+            });
+
+            // Hide the dropdown when a language option is selected
+            languageLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    languageOptions.style.display = 'none'; // Ẩn các tùy chọn khi nhấp vào tùy chọn
+                });
+            });
+        });
+    </script>
+    <style>
+        .language-selector {
+            position: flex;
+            display: inline-block;
+        }
+
+        .language-toggle {
+            padding: 10px 15px;
+            background-color: transparent; /* Loại bỏ nền của nút */
+            color: black; /* Đặt màu chữ của nút thành đen */
+    
+            cursor: pointer;
+        }
+
+        .language-options {
+            display: none; /* Ban đầu, danh sách ngôn ngữ không hiển thị */
+            position: absolute;
+            background-color: #ffffffff;
+            min-width: 160px;
+            border: 1px solid #ddd;
+            z-index: 1;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border-radius: 10px
+        }
+
+        .language-options li {
+            padding: 8px 12px;
+        }
+
+        .language-options li a {
+            text-decoration: none;
+            color: black; /* Đặt màu chữ của liên kết thành đen */
+            display: block;
+            
+        }
+
+        .language-options li:hover {
+            background-color: #f1f1f1; /* Nền khi hover */
+        }
+    </style>
+        <div class="inline-flex items-center gap-2 list-none py-px lg:ml-auto">
+          <a
+            href="https://app.oriagent.com/install"
+              target="_blank"
+            class="flex items-center justify-center transition-all duration-200 focus:ring-2 focus:outline-none text-base-500 bg-white hover:text-white ring-1 ring-base-200 focus:ring-blue-500 h-8 px-4 py-2 text-xs font-medium rounded-md hover:bg-blue-500">
+            Sign up
+          </a>
+          <a
+            href="https://app.oriagent.com/signin"
+              target="_blank"
+            class="flex items-center justify-center transition-all duration-200 ring-1 focus:ring-2 ring-base-100 focus:outline-none text-base-700 bg-base-50 hover:bg-white focus:ring-base-500/50 h-8 px-4 py-2 text-xs font-medium rounded-md">
+            Log in
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,65 @@
+---
+const featuresList = [
+  {
+    title: "Build AI Agent Platform",
+    description: "Build and Manage multi-agent AI systems tailored to your business needs.",
+  },
+  {
+    title: "On-Premise LLM Models",
+    description:
+      "Deploy a custom LLM model like ChatGPT securely within your business infrastructure.",
+  },
+  {
+    title: "AI Engineer Services",
+    description:
+      "Full-stack AI support from data, prompt to software engineering.",
+  },
+];
+---
+
+<section class="overflow-hidden bg-[url('/bg-payment.jpeg')] bg-cover bg-center bg-no-repeat">
+  <div class="pt-10 mx-auto relative">
+    <div class="text-center mx-auto lg:text-balance">
+      <p class="text-sm leading-normal font-bold uppercase text-accent-600">
+        ai agent platform
+      </p>
+      <h2
+        class="text-xl/snug leading-tight tracking-tight sm:text-6xl/snug md:text-6xl/snug capitalize lg:text-6xl/snug mt-3 font-semibold text-base-900">
+        Build Production - Agentic AI Solutions
+      </h2>
+      <p class="text-base leading-normal mt-4 text-base-500 font-medium">
+       Enterprise AI offerings, a powerful agent platform, and the no-code tools to get value from AI.
+      </p>
+      <div
+        class="flex flex-wrap items-center gap-2 justify-center mx-auto mt-12">
+        <a
+          href="https://www.arrowhitech.com/contact-us/"
+          class="flex items-center justify-center transition-all duration-200 focus:ring-2 focus:outline-none text-base-500 bg-white hover:text-accent-500 ring-1 ring-base-200 focus:ring-accent-500 h-9 px-4 py-2 text-sm font-medium rounded-md">
+          Contact Us
+        </a>
+        <a
+          href="https://app.oriagent.com/signin"
+          class="flex items-center justify-center transition-all duration-200 focus:ring-2 focus:outline-none text-white bg-accent-600 hover:bg-accent-700 focus:ring-accent-500/50 h-9 px-4 py-2 text-sm font-medium rounded-md">
+          Platform Demo
+        </a>
+      </div>
+    </div>
+    <dl
+      class="lg:gap-x-8 lg:grid-cols-3 max-w-4xl mt-8 mx-auto sm:gap-x-6 sm:gap-y-12 sm:grid sm:grid-cols-2 sm:space-y-0 space-y-6 text-center text-sm items-start">
+      {
+        featuresList.map(({ title, description }) => (
+          <div class="text-base-500 lg:text-balance">
+            <strong class="text-base-700">{title}</strong> ━ {description}
+          </div>
+        ))
+      }
+    </dl>
+    <div class="relative w-full mx-auto max-w-7xl items-center py-12 pb-12">
+      <img
+        alt="#_"
+        class="relative w-full "
+        src="/dashboard2.png"
+      />
+    </div>
+  </div>
+</section>
