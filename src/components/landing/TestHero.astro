@@ -1,0 +1,61 @@
+---
+// Bước 1: Import component ChatWidget vào đây
+// Chú ý: Đường dẫn '../components/ChatWidget.tsx' có thể cần được điều chỉnh
+// cho đúng với cấu trúc thư mục của bạn.
+import { ChatWidget } from '@/components/landing/ChatWidget';
+---
+
+<section class="overflow-hidden bg-white">
+  <div class="px-8 py-16 mx-auto md:px-12 lg:px-24 max-w-7xl relative">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      
+      <div class="lg:col-span-1">
+        <h1 class="text-4xl font-extrabold text-gray-900 sm:text-5xl leading-tight">
+          Giải pháp AI Chatbot - Agentic AI
+        </h1>
+        <p class="mt-4 text-lg text-gray-600">
+          Giúp doanh nghiệp <span class="font-semibold text-primary">tư vấn, bán hàng</span> & chăm sóc khách hàng
+        </p>
+        <p class="mt-2 text-xl font-semibold text-gray-800">
+          Bằng hội thoại <span class="font-semibold text-primary">đa kênh</span> toàn diện
+        </p>
+
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-4 rounded-xl bg-gray-50 flex items-start text-left gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <p class="font-medium text-gray-800">Tự động tư vấn bán hàng chốt đơn 24/7</p>
+          </div>
+          <div class="p-4 rounded-xl bg-gray-50 flex items-start text-left gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <p class="font-medium text-gray-800">Hiểu ngữ cảnh nhận diện hình ảnh sản phẩm</p>
+          </div>
+          <div class="p-4 rounded-xl bg-gray-50 flex items-start text-left gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <p class="font-medium text-gray-800">Kết nối thông luồng với nền tảng CRM/ERP</p>
+          </div>
+          <div class="p-4 rounded-xl bg-gray-50 flex items-start text-left gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <p class="font-medium text-gray-800">Kết nối đa nền tảng hội thoại chat đa kênh</p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-4 mt-8">
+          <a href="#" class="inline-flex items-center justify-center transition-all duration-200 text-white bg-gray-900 hover:bg-gray-800 h-12 px-5 py-3 text-base font-medium rounded-xl group">
+            Đăng ký dùng thử miễn phí
+            <span class="ml-3 flex items-center justify-center bg-white rounded-lg p-1 w-7 h-7 transform transition-transform duration-200 group-hover:scale-110">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </span>
+          </a>
+          <a href="#" class="inline-flex items-center justify-center transition-all duration-200 text-gray-800 bg-gray-100 hover:bg-gray-200 h-12 px-5 py-3 text-base font-medium rounded-xl">
+            Liên Hệ Tư Vấn
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-1 flex items-center justify-center">
+        <ChatWidget client:visible />
+      </div>
+      
+    </div>
+  </div>
+</section>
