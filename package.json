@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
+    "prebuild": "chmod +x ./node_modules/.bin/astro || true",
     "build": "npx astro build",
     "preview": "astro preview",
     "astro": "astro"
