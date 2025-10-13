@@ -1,8 +1,89 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Tableprice from "../components/landing/Tableprice.astro";
+import Tableprice2 from "../components/landing/Tableprice2.astro";
+import Tableprice3 from "../components/landing/Tableprice3.astro";
+
+// Giả định Alpine.js được tải để xử lý x-data, x-show và @click.
 ---
 
 <BaseLayout>
-  <Tableprice />
+  <!-- activeTab: 'ai-agent' (mặc định) hoặc 'admin' -->
+  <!-- isYearly: false (6 tháng/pricetable1) hoặc true (1 năm/pricetable2) -->
+  <section class="py-20 bg-gray-50" x-data="{ activeTab: 'ai-agent', isYearly: false }">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+      <!-- Tiêu đề -->
+      <div class="mb-10">
+        <h1 class="text-4xl md:text-4xl font-bold mb-3">
+          Bảng giá dịch vụ MI-Agent AI
+        </h1>
+        <h2 class="text-black text-xl font-semibold">
+          Dịch vụ và tính năng mở rộng
+        </h2>
+      </div>
+
+      <!-- Dòng 1: 2 nút chính (ngang hàng) -->
+      <div class="flex flex-wrap justify-center items-center gap-4 mb-6">
+        
+        <!-- Nút MI-Agent AI (Dẫn đến Table 1/2 + hiện Toggle) -->
+        <button
+          @click="activeTab = 'ai-agent'; isYearly = false"
+          :class="activeTab === 'ai-agent' ? 'bg-green-500 text-white shadow-lg' : 'bg-gray-200 text-black hover:bg-gray-300'"
+          class="px-8 py-3 rounded-full font-medium transition duration-300 transform hover:scale-105">
+          MI-Agent AI
+        </button>
+
+        <!-- Nút Quản Trị (Dẫn đến Table 3 + ẩn Toggle) -->
+        <button
+          @click="activeTab = 'admin'"
+          :class="activeTab === 'admin' ? 'bg-green-500 text-white shadow-lg' : 'bg-gray-200 text-black hover:bg-gray-300'"
+          class="px-8 py-3 rounded-full font-medium transition duration-300 transform hover:scale-105">
+          Quản Trị
+        </button>
+      </div>
+
+      <!-- Dòng 2: Toggle (Chỉ hiện khi activeTab là 'ai-agent') -->
+      <div x-show="activeTab === 'ai-agent'" x-cloak class="flex justify-center items-center gap-2 mb-10 transition-opacity duration-300">
+        <span :class="!isYearly ? 'font-bold text-black' : 'text-gray-500'">Gói 6 tháng</span>
+
+        <!-- Nút gạt chuyển đổi giữa Pricetable 1 và Pricetable 2 -->
+        <button
+          @click="isYearly = !isYearly"
+          :class="isYearly ? 'bg-green-500' : 'bg-gray-300'"
+          class="relative w-14 h-7 rounded-full transition-colors duration-300 shadow-inner p-1">
+          <span
+            :class="isYearly ? 'translate-x-6' : 'translate-x-0'"
+            class="absolute top-1/2 -translate-y-1/2 left-0.5 w-6 h-6 bg-white rounded-full transition-transform duration-300 shadow">
+          </span>
+        </button>
+
+        <span :class="isYearly ? 'font-bold text-black' : 'text-gray-500'">Gói 1 năm</span>
+
+        <span
+          class="text-red-600 text-sm font-semibold bg-red-100 px-3 py-1 rounded-full whitespace-nowrap ml-2">
+          Ưu đãi 29%
+        </span>
+      </div>
+      
+      <!-- Nội dung bảng giá -->
+      <div class="mt-10">
+        
+        <!-- Pricetable 1: MI-Agent AI, Gói 6 tháng (Mặc định ban đầu) -->
+        <div x-show="activeTab === 'ai-agent' && !isYearly" x-cloak class="transition-all duration-500 ease-in-out transform">
+          <Tableprice />
+        </div>
+
+        <!-- Pricetable 2: MI-Agent AI, Gói 1 năm (Khi gạt switch) -->
+        <div x-show="activeTab === 'ai-agent' && isYearly" x-cloak class="transition-all duration-500 ease-in-out transform">
+          <Tableprice2 />
+        </div>
+
+        <!-- Pricetable 3: Quản Trị (Khi bấm nút Quản Trị) -->
+        <div x-show="activeTab === 'admin'" x-cloak class="transition-all duration-500 ease-in-out transform">
+          <Tableprice3 />
+        </div>
+      </div>
+      
+    </div>
+  </section>
 </BaseLayout>
