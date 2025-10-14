@@ -30,10 +30,10 @@ export default function RotatingIcons() {
   return (
     <div className="relative w-[600px] h-[600px] flex items-center justify-center">
       {/* Outer circle ring */}
-      <div className="absolute w-[500px] h-[500px] rounded-full border-2 border-purple-200/40" />
+      <div className="absolute w-[500px] h-[500px] rounded-full border-4 border-purple-200/40" />
 
       {/* Inner circle ring */}
-      <div className="absolute w-[300px] h-[300px] rounded-full border-2 border-purple-200/40" />
+      <div className="absolute w-[300px] h-[300px] rounded-full border-3 border-purple-200/40" />
 
       {/* Outer icons */}
       <div
