@@ -1,5 +1,7 @@
 ---
 import { ChatWidget } from '@/components/landing/ChatWidget';
+import RotatingIcons from "@/components/landing/Rotating-icon";
+
 ---
 
 
@@ -96,14 +98,19 @@ import { ChatWidget } from '@/components/landing/ChatWidget';
                 </div>
             </ul>
           </div>
-          <a href="#" class="inline-flex items-start gap-2 px-4 py-2 bg-gray-900 text-white font-semibold rounded-2xl hover:bg-gray-700">
-            Xem video hướng dẫn thiết lập
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="size-6">
-              <circle cx="12" cy="12" r="12" fill="white"/>
-              
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="black" d="M15 9l-6 6m0-6h6v6" />
-            </svg>
-
+          <a
+            href="https://app.miagent.io/signin"
+            target="_blank"
+            class="inline-flex  items-center justify-center transition-all duration-200 focus:ring-2 focus:outline-none 
+                  text-white bg-gray-900 hover:bg-gray-800 focus:ring-gray-700/50 
+                  h-10 px-4 py-2 text-base font-medium rounded-xl group"
+          >
+            Xem Video Hướng Dẫn Thiết Lập
+            <span class="ml-4 flex items-center justify-center 
+                         p-1 w-9 h-9  rounded-xl
+                        transform transition-transform duration-200 group-hover:scale-110">
+              <img src="\muiten.svg" alt="icon" class="w-full h-full object-contain" />
+            </span>
           </a>
         </div>
         <div class="flex justify-center relative flex-col ml-25 border border-green-500 rounded-4xl p-2 w-80 h-145">
@@ -117,9 +124,58 @@ import { ChatWidget } from '@/components/landing/ChatWidget';
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start  ">
-        <div class="bg-no-repeat bg-center bg-[length:80%_auto] bg-[url('Circle.svg')]">
-           <img class="w-full h-auto rounded-xl " src="page3.svg" alt="Feature 2 Mockup">
+
+
+        <div class="bg-no-repeat flex bg-center bg-[length:80%_auto] bg-[url('Circle.svg')]">
+          <div class="flex relative flex-col border border-green-500 rounded-4xl p-2 w-80 h-145">
+        
+            <div class="w-40 h-4 border border-green-300 rounded-full bg-green-50 mx-auto my-3 shrink-0"></div>
+            <div class="flex-1 overflow-y-auto">
+              <ChatWidget client:visible />
+            </div>
+          </div>
+          
+          <div class="flex items-center space-x-4">
+            <div class="flex flex-col items-center space-y-16 mt-24 text-sm font-semibold text-gray-700">
+              <!-- GET API -->
+              <div class="flex items-center">
+                <div class="relative flex items-center">
+                  <!-- Mũi tên trái -->
+                  <div class="w-0 h-0 border-t-[9px] border-b-[9px] border-r-[12px] border-t-transparent border-b-transparent border-r-green-500"></div>
+                  <!-- Thân + chữ -->
+                  <div class="w-28 h-[2px] bg-green-500 relative flex items-center justify-center">
+                    <span class="absolute -translate-y-3 px-2 text-gray-700">GET API</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- POST API -->
+              <div class="flex items-center">
+                <div class="relative flex items-center">
+                  <!-- Thân + chữ -->
+                  <div class="w-28 h-[2px] bg-green-500 relative flex items-center justify-center">
+                    <span class="absolute -translate-y-3 px-2 text-gray-700">POST API</span>
+                  </div>
+                  <!-- Mũi tên phải -->
+                  <div class="w-0 h-0 border-t-[9px] border-b-[9px] border-l-[12px] border-t-transparent border-b-transparent border-l-green-500"></div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="border-2 border-green-500 rounded-2xl p-4 w-40 min-h-[30rem] flex flex-col justify-around">
+                <div class="text-center p-2"><img src="\odoo.svg" alt="odoo Logo" class="w-auto h-12 mx-auto"></div>
+                <div class="text-center p-2"><img src="\kiotviet2.svg" alt="KiotViet Logo" class="w-64 h-12 mx-auto"></div>
+                <div class="text-center p-2"><img src="\haravan.svg" alt="Havaran Logo" class="w-64 h-8 mx-auto"></div>
+                <div class="text-center p-2"><img src="nhanh.svg" alt="Nhanh.vn Logo" class="w-auto h-8 mx-auto"></div>
+                <div class="text-center p-2"><img src="\pos2.svg" alt="POS Logo" class="w-auto h-8 mx-auto"></div>
+            </div>
+          </div>
         </div>
+
+
+
+
         <div class="space-y-5 lg:order-last ">
           <div class="flex items-start gap-4">
             <span class="flex items-center justify-center w-13 h-10 bg-black text-white font-bold rounded-full">2</span>
@@ -192,14 +248,19 @@ import { ChatWidget } from '@/components/landing/ChatWidget';
                 </div>
             </ul>
           </div>
-          <a href="#" class="inline-flex items-start gap-2 px-4 py-2 bg-gray-900 text-white font-semibold rounded-2xl hover:bg-gray-700">
-            Xem video hướng dẫn thiết lập
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="size-6">
-              <circle cx="12" cy="12" r="12" fill="white"/>
-              
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="black" d="M15 9l-6 6m0-6h6v6" />
-            </svg>
-
+          <a
+            href="https://app.miagent.io/signin"
+            target="_blank"
+            class="inline-flex  items-center justify-center transition-all duration-200 focus:ring-2 focus:outline-none 
+                  text-white bg-gray-900 hover:bg-gray-800 focus:ring-gray-700/50 
+                  h-10 px-4 py-2 text-base font-medium rounded-xl group"
+          >
+            Xem Video Hướng Dẫn Thiết Lập
+            <span class="ml-4 flex items-center justify-center 
+                         p-1 w-9 h-9  rounded-xl
+                        transform transition-transform duration-200 group-hover:scale-110">
+              <img src="\muiten.svg" alt="icon" class="w-full h-full object-contain" />
+            </span>
           </a>
         </div>
       </div>
@@ -281,14 +342,19 @@ import { ChatWidget } from '@/components/landing/ChatWidget';
                 </div>
             </ul>
           </div>
-          <a href="#" class="inline-flex items-start gap-2 px-4 py-2 bg-gray-900 text-white font-semibold rounded-2xl hover:bg-gray-700">
-            Xem video hướng dẫn thiết lập
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="size-6">
-              <circle cx="12" cy="12" r="12" fill="white"/>
-              
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="black" d="M15 9l-6 6m0-6h6v6" />
-            </svg>
-
+          <a
+            href="https://app.miagent.io/signin"
+            target="_blank"
+            class="inline-flex  items-center justify-center transition-all duration-200 focus:ring-2 focus:outline-none 
+                  text-white bg-gray-900 hover:bg-gray-800 focus:ring-gray-700/50 
+                  h-10 px-4 py-2 text-base font-medium rounded-xl group"
+          >
+            Xem Video Hướng Dẫn Thiết Lập
+            <span class="ml-4 flex items-center justify-center 
+                         p-1 w-9 h-9  rounded-xl
+                        transform transition-transform duration-200 group-hover:scale-110">
+              <img src="\muiten.svg" alt="icon" class="w-full h-full object-contain" />
+            </span>
           </a>
         </div>
         <div class="flex justify-center relative flex-col ml-35 border border-green-500 rounded-4xl p-2 w-80 h-145">

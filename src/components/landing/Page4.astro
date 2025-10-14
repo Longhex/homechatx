@@ -1,3 +1,7 @@
+---
+import { ChatWidget } from '@/components/landing/ChatWidget';
+import RotatingIcons from "@/components/landing/Rotating-icon";
+---
 <section class="bg-slate-50 overflow-hidden py-16 sm:py-24">
   <div class="container mx-auto px-6">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -79,15 +83,20 @@
             </ul>
           </div>
         
-        <a href="#" class="mt-4 inline-flex items-center justify-between gap-x-4 bg-gray-800 text-white rounded-full pl-6 pr-2 py-2 font-semibold transition hover:bg-gray-700">
-          <span>Xem video hướng dẫn thiết lập</span>
-          <span class="inline-block">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="size-8">
-              <circle cx="12" cy="12" r="12" fill="white"></circle>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="black" d="M15 9l-6 6m0-6h6v6"></path>
-            </svg>
-          </span>
-        </a>
+        <a
+            href="https://app.miagent.io/signin"
+            target="_blank"
+            class="inline-flex  items-center justify-center transition-all duration-200 focus:ring-2 focus:outline-none 
+                  text-white bg-gray-900 hover:bg-gray-800 focus:ring-gray-700/50 
+                  h-10 px-4 py-2 text-base font-medium rounded-xl group"
+          >
+            Xem Video Hướng Dẫn Thiết Lập
+            <span class="ml-4 flex items-center justify-center 
+                         p-1 w-9 h-9  rounded-xl
+                        transform transition-transform duration-200 group-hover:scale-110">
+              <img src="\muiten.svg" alt="icon" class="w-full h-full object-contain" />
+            </span>
+          </a>
       </div>
 
       <div class="relative min-h-[450px] flex items-center justify-center">
@@ -96,10 +105,7 @@
         
         <div class="relative min-h-[400px] flex items-center justify-center">
   
-          <img 
-            src="/Circleapp.png" 
-            alt="Minh họa các ứng dụng tích hợp" 
-            class="h-auto max-w-lg"> </div>
+          <RotatingIcons client:load />
         </div>
 
     </div>
