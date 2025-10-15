@@ -99,14 +99,19 @@ import RotatingIcons from "@/components/landing/Rotating-icon";
           </a>
       </div>
 
-      <div class="relative min-h-[450px] flex items-center justify-center">
-        
-        <div class="absolute inset-0 bg-gradient-to-tr from-blue-200/80 via-pink-200/80 to-sky-200/80 rounded-full blur-3xl"></div>
-        
-        <div class="relative min-h-[400px] flex items-center justify-center">
+      <div class="relative min-h-[300px] sm:min-h-[400px] md:min-h-[450px] flex items-center justify-center">
   
+        <div class="absolute inset-0 bg-gradient-to-tr from-blue-200/80 via-pink-200/80 to-sky-200/80 
+                    rounded-[150px] sm:rounded-full 
+                    blur-xl sm:blur-3xl">
+        </div>
+        
+        <div class="relative min-h-[250px] sm:min-h-[350px] md:min-h-[400px] flex items-center justify-center">
           <RotatingIcons client:load />
         </div>
+
+      </div>
+
 
     </div>
   </div>
