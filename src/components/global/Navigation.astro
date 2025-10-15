@@ -3,9 +3,9 @@
     <!-- GỘP x-data ở đây -->
     <div
       x-data="{ open: false }"
-      class="relative flex w-full py-5 mx-auto bg-white lg:items-center lg:flex-row"
+      class="relative flex w-full py-5 mx-auto bg-white lg:items-center lg:flex-row "
     >
-      <div class="flex flex-row items-center justify-between flex-shrink-0">
+      <div class="flex flex-row items-center justify-between flex-shrink-0 ">
         <a href="/" class="text-black inline-flex items-center gap-3">
           <img width="30" src="/logomi.svg" alt="logo" />
           <img width="125" src="/miagent.svg" alt="logo" />
@@ -24,41 +24,15 @@
             viewBox="0 0 24 24"
             stroke="currentColor"
           >
-            <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+            <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
       </div>
 
-      <!-- MOBILE OVERLAY: dùng cùng biến open (KHÔNG x-data ở đây) -->
-      <div
-        x-cloak
-        x-show="open"
-        x-transition.opacity
-        class="fixed inset-0 z-50 bg-white flex flex-col items-center justify-center space-y-6 text-center text-lg font-medium lg:hidden"
-      >
-        <button @click="open = false" class="absolute top-6 left-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-gray-700" fill="none"
-            viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-
-        <nav class="flex flex-col items-center gap-6">
-          <a class="text-xl text-black transition duration-300 hover:text-blue-600" href="/banggia">Bảng Giá</a>
-          <a class="text-xl text-black transition duration-300 hover:text-blue-600" href="/tailieu">Tài liệu</a>
-          <a class="text-xl text-black transition duration-300 hover:text-blue-600" href="/doi-tac">Trở thành đối tác</a>
-          <a class="text-xl text-black transition duration-300 hover:text-blue-600" href="#">English</a>
-
-          <a href="/bat-dau"
-             class="mt-4 w-[80%] inline-block bg-black text-white px-6 py-3 rounded-full text-base font-semibold hover:bg-blue-600">
-            Bắt đầu
-          </a>
-        </nav>
-      </div>
-
-      <!-- DESKTOP / TABLET MENU (sử dụng x-show trên overlay nên không cần :class nữa) -->
+      <!-- DESKTOP / TABLET MENU -->
       <div class="hidden lg:flex flex-col w-full lg:flex-row lg:items-center">
         <nav class="flex-col items-center gap-4 lg:gap-8 lg:pb-0 flex lg:flex-row lg:mx-auto">
           <a class="text-sm text-black transition duration-300 hover:text-blue-600 bg-green-100 rounded-full px-3 py-1" href="/#features">
@@ -95,6 +69,37 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- ✅ MOBILE OVERLAY MENU (đã tách ra khỏi max-w wrapper để full màn hình và nút X sát mép trái) -->
+  <div
+    x-cloak
+    x-show="open"
+    x-transition.opacity
+    class="fixed inset-0 z-50 bg-white flex flex-col items-center justify-center space-y-6 text-center text-lg font-medium lg:hidden"
+  >
+    <button 
+      @click="open = false"
+      class="absolute top-4 left-4 bg-transparent border-none"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" 
+        class="w-7 h-7 text-gray-700 block"
+        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <nav class="flex flex-col items-center gap-6">
+      <a class="text-xl text-black transition duration-300 hover:text-blue-600" href="/banggia">Bảng Giá</a>
+      <a class="text-xl text-black transition duration-300 hover:text-blue-600" href="/tailieu">Tài liệu</a>
+      <a class="text-xl text-black transition duration-300 hover:text-blue-600" href="/doi-tac">Trở thành đối tác</a>
+      <a class="text-xl text-black transition duration-300 hover:text-blue-600" href="#">English</a>
+      <a href="/bat-dau"
+         class="mt-4 w-[80%] inline-block bg-black text-white px-6 py-3 rounded-full text-base font-semibold hover:bg-blue-600">
+        Bắt đầu
+      </a>
+    </nav>
   </div>
 
   <script>
