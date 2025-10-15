@@ -1,5 +1,6 @@
 <header class="sticky top-0 z-50 bg-white border-b border-black/5">
-  <div class=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+    <!-- GỘP x-data ở đây -->
     <div
       x-data="{ open: false }"
       class="relative flex w-full py-5 mx-auto bg-white lg:items-center lg:flex-row"
@@ -29,12 +30,38 @@
         </button>
       </div>
 
+      <!-- MOBILE OVERLAY: dùng cùng biến open (KHÔNG x-data ở đây) -->
       <div
-        :class="{'flex': open, 'hidden': !open}"
-        class="flex-col w-full hidden lg:flex lg:flex-row lg:items-center"
+        x-cloak
+        x-show="open"
+        x-transition.opacity
+        class="fixed inset-0 z-50 bg-white flex flex-col items-center justify-center space-y-6 text-center text-lg font-medium lg:hidden"
       >
+        <button @click="open = false" class="absolute top-6 right-6">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-gray-700" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <nav class="flex flex-col items-center gap-6">
+          <a class="text-xl text-black transition duration-300 hover:text-blue-600" href="/banggia">Bảng Giá</a>
+          <a class="text-xl text-black transition duration-300 hover:text-blue-600" href="/tailieu">Tài liệu</a>
+          <a class="text-xl text-black transition duration-300 hover:text-blue-600" href="/doi-tac">Trở thành đối tác</a>
+          <a class="text-xl text-black transition duration-300 hover:text-blue-600" href="#">English</a>
+
+          <a href="/bat-dau"
+             class="mt-4 w-[80%] inline-block bg-black text-white px-6 py-3 rounded-full text-base font-semibold hover:bg-blue-600">
+            Bắt đầu
+          </a>
+        </nav>
+      </div>
+
+      <!-- DESKTOP / TABLET MENU (sử dụng x-show trên overlay nên không cần :class nữa) -->
+      <div class="hidden lg:flex flex-col w-full lg:flex-row lg:items-center">
         <nav class="flex-col items-center gap-4 lg:gap-8 lg:pb-0 flex lg:flex-row lg:mx-auto">
-          <a class="text-sm text-black transition duration-300 hover:text-blue-600 bg-green-100  rounded-full px-3 py-1" href="/#features">
+          <a class="text-sm text-black transition duration-300 hover:text-blue-600 bg-green-100 rounded-full px-3 py-1" href="/#features">
             Về Miagent
           </a>
           <a href="/banggia" class="text-sm text-black transition duration-300 hover:text-blue-600 relative">
@@ -48,22 +75,20 @@
           <a href="/faq" class="text-sm text-black transition duration-300 hover:text-blue-600 relative">
             Blog
           </a>
-          
         </nav>
 
         <div class="inline-flex items-center gap-2 list-none">
           <a
             href="https://app.miagent.io/install"
             target="_blank"
-            class="flex items-center justify-center transition-all duration-200 focus:ring-2 focus:outline-none
-             text-white bg-green-500 rounded-full px-3 py-1 hover:text-white ring-1 ring-gray-200 focus:ring-blue-500 h-8  text-xs font-medium  hover:bg-blue-500"
+            class="flex items-center justify-center transition-all duration-200 text-white bg-green-500 rounded-full px-3 py-1 hover:text-white ring-1 ring-gray-200 focus:ring-2 focus:ring-blue-500 h-8 text-xs font-medium hover:bg-blue-500"
           >
             Đăng Ký
           </a>
           <a
             href="https://app.miagent.io/signin"
             target="_blank"
-            class="flex items-center justify-center transition-all duration-200 ring-1 focus:ring-2 ring-gray-100 focus:outline-none text-white bg-black hover:bg-blue-500 focus:ring-gray-500/50 h-8  text-xs font-medium rounded-full px-3 py-1"
+            class="flex items-center justify-center transition-all duration-200 ring-1 focus:ring-2 ring-gray-100 focus:outline-none text-white bg-black hover:bg-blue-500 focus:ring-gray-500/50 h-8 text-xs font-medium rounded-full px-3 py-1"
           >
             Đăng Nhập
           </a>
@@ -74,8 +99,8 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const languageToggleButton = document.querySelector('.language-toggle') as HTMLElement;
-      const languageOptions = document.querySelector('.language-options') as HTMLElement;
+      const languageToggleButton = document.querySelector('.language-toggle');
+      const languageOptions = document.querySelector('.language-options');
       const languageLinks = document.querySelectorAll('.language-options li a');
       if (languageToggleButton && languageOptions) {
         languageToggleButton.addEventListener('click', function(event) {
@@ -93,7 +118,11 @@
       }
     });
   </script>
+
   <style>
+    /* tránh flash khi Alpine chưa khởi tạo */
+    [x-cloak] { display: none !important; }
+
     .language-selector { position: relative; display: inline-block; }
     .language-toggle { padding: 10px 15px; background-color: transparent; color: black; cursor: pointer; border: none; }
     .language-options { display: none; position: absolute; background-color: #ffffff; min-width: 160px; border: 1px solid #ddd; z-index: 10; list-style: none; padding: 0; margin-top: 5px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
