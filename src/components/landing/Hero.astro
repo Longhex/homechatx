@@ -100,27 +100,35 @@ import { ChatWidget } from '@/components/landing/ChatWidget';
         </div>
       </div>
 
-      <div x-data="{ open: false }" class="lg:col-span-1 relative 
-    pl-4 pr-4 lg:pl-16 lg:pr-20"> <div class="hidden lg:flex flex-col items-center justify-center absolute top-92 left-0 -translate-y-1/2 space-y-4">
-        <img src="/pic1.svg" alt="Odoo" class="w-17 h-auto">
-    </div>
+      <div x-data="{ open: false }" class="lg:col-span-1 relative pl-16 pr-20">
 
-    <div class="flex justify-center relative flex-col 
-        w-[90%] mx-auto sm:w-80 
-        border border-green-500 rounded-4xl p-2 
-        min-h-[500px] max-h-[90vh] lg:h-auto lg:max-h-full"> <div class="w-40 h-4 border border-green-300 rounded-full bg-green-50 mx-auto my-3 shrink-0"></div>
-        <div class="flex-1 overflow-y-auto">
+        <div class="hidden lg:flex flex-col items-center justify-center absolute top-92 left-0 -translate-y-1/2 space-y-4">
+          <img src="/pic1.svg" alt="Odoo" class="w-17 h-auto">
+          
+        </div>
+
+        <div class="flex justify-center relative flex-col 
+          w-full mx-auto sm:w-80 
+          border border-green-500 rounded-4xl p-2 
+          h-[500px] max-h-[600px] lg:h-auto lg:max-h-full">
+          
+          <div class="w-40 h-4 border border-green-300 rounded-full bg-green-50 mx-auto my-3 shrink-0"></div>
+          <div class="flex-1 overflow-y-auto">
             <ChatWidget client:visible />
+          </div>
+          
         </div>
         
-    </div>
-    
-    <div class="hidden lg:flex flex-col items-center justify-center w-11 h-70 absolute top-35 right-14 -translate-y-1/2 space-y-4 rounded-xl shadow-lg ring-1 ring-green-500 max-w-xl">
-        <img src="/messeger.svg" alt="Messeger" class="w-9 h-9">
-        <img src="/zalo.png" alt="Zalo" class="w-11 h-11">
-        <img src="shopee.png" alt="Shopee" class="w-11 h-11">
-        <img src="/shopify.svg" alt="Shopify" class="w-12 h-12">
-        <img src="/tiktok.png" alt="Tiktok" class="w-11 h-11">
-    </div>
+        <div class="hidden lg:flex flex-col items-center justify-center w-11 h-70 absolute top-35 right-14 -translate-y-1/2 space-y-4 rounded-xl shadow-lg ring-1 ring-green-500 max-w-xl">
+          <img src="/messeger.svg" alt="Messeger" class="w-9 h-9">
+          <img src="/zalo.png" alt="Zalo" class="w-11 h-11">
+          <img src="shopee.png" alt="Shopee" class="w-11 h-11">
+          <img src="/shopify.svg" alt="Shopify" class="w-12 h-12">
+          <img src="/tiktok.png" alt="Tiktok" class="w-11 h-11">
+        </div>
 
-</div>
+      </div>
+      
+    </div>
+  </div>
+</section>
