@@ -95,7 +95,7 @@ export function ChatWidget() {
 
   return (
     
-    <div className="w-full lg:max-w-[300px] h-[600px] lg:h-[520px] bg-white rounded-3xl border-2 shadow-2xs flex flex-col overflow-hidden">
+    <div className="w-full lg:max-w-[300px] h-full max-h-[90vh] lg:h-[520px] bg-white rounded-3xl border-2 shadow-2xs flex flex-col overflow-hidden">
       <div className="bg-white border-b p-4 flex items-center gap-3">
         <Avatar className="h-10 w-10">
           <AvatarFallback className="bg-black text-white font-semibold">AI</AvatarFallback>
