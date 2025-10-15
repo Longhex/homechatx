@@ -43,28 +43,7 @@ import Fag from "@/components/landing/Fag.astro";
         </button>
       </div>
 
-      <!-- Dòng 2: Toggle (Chỉ hiện khi activeTab là 'ai-agent') -->
-      <div x-show="activeTab === 'ai-agent'" x-cloak class="flex justify-center items-center gap-2 mb-10 transition-opacity duration-300">
-        <span :class="!isYearly ? 'font-bold text-black' : 'text-gray-500'">Gói 6 tháng</span>
-
-        <!-- Nút gạt chuyển đổi giữa Pricetable 1 và Pricetable 2 -->
-        <button
-          @click="isYearly = !isYearly"
-          :class="isYearly ? 'bg-green-500' : 'bg-gray-300'"
-          class="relative w-14 h-7 rounded-full transition-colors duration-300 shadow-inner p-1">
-          <span
-            :class="isYearly ? 'translate-x-6' : 'translate-x-0'"
-            class="absolute top-1/2 -translate-y-1/2 left-0.5 w-6 h-6 bg-white rounded-full transition-transform duration-300 shadow">
-          </span>
-        </button>
-
-        <span :class="isYearly ? 'font-bold text-black' : 'text-gray-500'">Gói 1 năm</span>
-
-        <span
-          class="text-red-600 text-sm font-semibold bg-red-100 px-3 py-1 rounded-full whitespace-nowrap ml-2">
-          Ưu đãi 29%
-        </span>
-      </div>
+      
       
       <!-- Nội dung bảng giá -->
       <div class="mt-10">
