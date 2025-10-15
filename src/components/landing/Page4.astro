@@ -99,18 +99,21 @@ import RotatingIcons from "@/components/landing/Rotating-icon";
           </a>
       </div>
 
-      <div class="relative min-h-[300px] sm:min-h-[400px] md:min-h-[450px] flex items-center justify-center">
-  
-        <div class="absolute inset-0 bg-gradient-to-tr from-blue-200/80 via-pink-200/80 to-sky-200/80 
-                    rounded-[150px] sm:rounded-full 
-                    blur-xl sm:blur-3xl">
-        </div>
-        
-        <div class="relative min-h-[250px] sm:min-h-[350px] md:min-h-[400px] flex items-center justify-center">
+      <div class="relative min-h-[280px] sm:min-h-[400px] md:min-h-[450px] flex items-center justify-center">
+        <!-- Nền gradient mờ -->
+        <div
+          class="absolute inset-0 
+                bg-gradient-to-tr from-blue-200/70 via-pink-200/70 to-sky-200/70
+                rounded-[80px] sm:rounded-[120px] md:rounded-full
+                blur-2xl sm:blur-3xl md:blur-[80px]"
+        ></div>
+
+        <!-- Vùng chứa icon xoay -->
+        <div class="relative flex items-center justify-center min-h-[220px] sm:min-h-[340px] md:min-h-[400px]">
           <RotatingIcons client:load />
         </div>
-
       </div>
+
 
 
     </div>

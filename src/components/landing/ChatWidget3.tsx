@@ -1,4 +1,4 @@
-// src/components/ChatWidget.tsx
+// src/components/ChatWidget3.tsx
 
 "use client"
 
@@ -16,16 +16,15 @@ interface Message {
 }
 
 const conversationScript: (Message & { delay: number })[] = [
-  { id: 1, type: "customer", content: "Chào shop, cho em hỏi áo này còn size M không ạ?", delay: 1000 },
-  { id: 2, type: "agent", content: "Xin chào bạn! Đây là mẫu Váy dạ hội dài trong bộ sưu tập mới của shop ạ.", delay: 1500 },
-  { id: 3, type: "agent", content: "Em xin phép kiểm tra tồn kho size M cho bạn nhé.", delay: 1500 },
-  { id: 4, type: "agent", content: "Dạ vâng! Váy dạ hội dài này hiện còn size M ạ 🎉\n\nChất liệu cotton 100%, co giãn thoải mái, form dáng chuẩn, rất phù hợp cho mùa hè.\nGiá gốc 999k, hiện đang giảm còn 839k ạ.", delay: 2500 },
-  { id: 5, type: "customer", content: "Vậy ship về Hà Nội mất bao lâu ạ?", delay: 2000 },
-  { id: 6, type: "agent", content: "Nếu bạn ở nội thành Hà Nội thì giao trong 2–3 giờ là nhận được ạ.\nKhu vực ngoại thành sẽ khoảng 1–3 ngày, và miễn phí ship cho đơn từ 500k trở lên ạ 🚚✨", delay: 2000 },
-  { id: 7, type: "customer", content: "Ok, chị đặt 1 chiếc size M. Giao tại 123 Trần Duy Hưng, Cầu Giấy, Hà Nội nhé.", delay: 2500 },
-  { id: 8, type: "agent", content: "Dạ vâng! Em đã ghi nhận đơn hàng của chị:\n\n👗 Váy dạ hội dài – Size M\n💰 Giá: 839k (đã giảm 20%)\n📍 Địa chỉ: 123 Trần Duy Hưng, Cầu Giấy, Hà Nội\n🚚 Giao hàng: 2–3 giờ\n\nTổng thanh toán: 839k + 30k phí ship = 869k\n\nChị vui lòng giữ máy, bên em sẽ gọi xác nhận đơn trong 5 phút ạ! 💬", delay: 3000 },
-  { id: 9, type: "agent", content: "", image: "/vayden.png", delay: 1000 },
+  { id: 1, type: "customer", content: "Shop ơi, áo thun trắng basic size M còn bao nhiêu cái trong kho vậy ạ?", delay: 1200 },
+  { id: 2, type: "agent", content: "Em kiểm tra realtime trên hệ thống CRM cho chị nhé 🕐", delay: 1500 },
+  { id: 3, type: "agent", content: "Hiện shop còn 12 chiếc size M, và đang có chương trình *mua 2 tặng 1* áp dụng đến hết hôm nay ạ 🎉", delay: 2000 },
+  { id: 4, type: "customer", content: "Tốt quá! Vậy chị lấy 2 chiếc nhé, để được tặng thêm 1 chiếc đúng không?", delay: 2000 },
+  { id: 5, type: "agent", content: "Dạ đúng rồi ạ 💖\n\nMiAgent đã tạo đơn hàng tạm cho chị:\n\n📦 Áo thun trắng basic – Size M (2 tặng 1)\n💰 Giá: 239k/chiếc → Tổng 478k, tặng thêm 1 chiếc miễn phí\n🚚 Giao hàng: 2–3 giờ tại 123 Trần Duy Hưng, Cầu Giấy, HN\n\nChị có muốn xác nhận đơn ngay để em gửi qua hệ thống ERP xử lý luôn không ạ?", image: "/XF003.jpg", delay: 3000 },
+  { id: 6, type: "customer", content: "Ok, xác nhận giúp chị nhé.", delay: 2000 },
+  { id: 7, type: "agent", content: "Dạ vâng! ✅\n\nEm vừa đẩy đơn hàng lên hệ thống ERP — mã đơn là *#DH10254*.\nTình trạng hiện tại: **Đang chờ xác nhận kho**.\n\nChị có thể theo dõi realtime trạng thái đơn này trực tiếp ngay tại đây hoặc trong app của shop nhé 📲", delay: 3000 },
 ];
+
 
 
 function TypingIndicator() {
@@ -43,7 +42,7 @@ function TypingIndicator() {
   )
 }
 
-export function ChatWidget() {
+export function ChatWidget3() {
   const [messages, setMessages] = useState<Message[]>([])
   const [isTyping, setIsTyping] = useState(false)
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0)

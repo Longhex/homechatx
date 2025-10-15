@@ -1,4 +1,4 @@
-// src/components/ChatWidget.tsx
+// src/components/ChatWidget2.tsx
 
 "use client"
 
@@ -16,15 +16,17 @@ interface Message {
 }
 
 const conversationScript: (Message & { delay: number })[] = [
-  { id: 1, type: "customer", content: "Chào shop, cho em hỏi áo này còn size M không ạ?", delay: 1000 },
-  { id: 2, type: "agent", content: "Xin chào bạn! Đây là mẫu Váy dạ hội dài trong bộ sưu tập mới của shop ạ.", delay: 1500 },
-  { id: 3, type: "agent", content: "Em xin phép kiểm tra tồn kho size M cho bạn nhé.", delay: 1500 },
-  { id: 4, type: "agent", content: "Dạ vâng! Váy dạ hội dài này hiện còn size M ạ 🎉\n\nChất liệu cotton 100%, co giãn thoải mái, form dáng chuẩn, rất phù hợp cho mùa hè.\nGiá gốc 999k, hiện đang giảm còn 839k ạ.", delay: 2500 },
-  { id: 5, type: "customer", content: "Vậy ship về Hà Nội mất bao lâu ạ?", delay: 2000 },
-  { id: 6, type: "agent", content: "Nếu bạn ở nội thành Hà Nội thì giao trong 2–3 giờ là nhận được ạ.\nKhu vực ngoại thành sẽ khoảng 1–3 ngày, và miễn phí ship cho đơn từ 500k trở lên ạ 🚚✨", delay: 2000 },
-  { id: 7, type: "customer", content: "Ok, chị đặt 1 chiếc size M. Giao tại 123 Trần Duy Hưng, Cầu Giấy, Hà Nội nhé.", delay: 2500 },
-  { id: 8, type: "agent", content: "Dạ vâng! Em đã ghi nhận đơn hàng của chị:\n\n👗 Váy dạ hội dài – Size M\n💰 Giá: 839k (đã giảm 20%)\n📍 Địa chỉ: 123 Trần Duy Hưng, Cầu Giấy, Hà Nội\n🚚 Giao hàng: 2–3 giờ\n\nTổng thanh toán: 839k + 30k phí ship = 869k\n\nChị vui lòng giữ máy, bên em sẽ gọi xác nhận đơn trong 5 phút ạ! 💬", delay: 3000 },
-  { id: 9, type: "agent", content: "", image: "/vayden.png", delay: 1000 },
+  { id: 1, type: "customer", content: "Alo", delay: 800 },
+  { id: 2, type: "customer", content: "Ê lô", delay: 800 },
+  { id: 3, type: "customer", content: "Shop ơi", delay: 800 },
+  { id: 4, type: "customer", content: "Cho em hỏi cái áo form rộng màu be hôm qua em xem ấy\nCòn hàng không ạ?", delay: 1200 },
+  { id: 5, type: "agent", content: "Dạ em chào chị! 🌸\n\nMiAgent vừa nhận diện được hình ảnh và nội dung chị mô tả — áo form rộng màu be trong bộ sưu tập “Summer Breeze” đúng không ạ?", delay: 2500 },
+  { id: 6, type: "agent", content: "Mẫu này hiện còn đầy đủ size M, L, chất vải linen cao cấp, thoáng mát ạ.", delay: 1500 },
+  { id: 7, type: "customer", content: "Đúng rồi đó, form này có co giãn không em?", delay: 2000 },
+  { id: 8, type: "agent", content: "Dạ, vải linen nên không co giãn nhiều chị nhé, nhưng form rộng nên mặc vẫn thoải mái ạ.", delay: 2000 },
+  { id: 9, type: "agent", content: "Nếu chị thích dáng suông nhẹ hơn thì có mẫu *Be Linen Soft*, em gửi hình cho chị xem luôn nha 💬", delay: 2000 },
+  { id: 10, type: "agent", content: "", image: "/XF009.jpg", delay: 1000 },
+  { id: 11, type: "agent", content: "Mẫu Be Linen Soft – chất linen mềm hơn, nhẹ và thấm hút tốt hơn, form suông tự nhiên 🌿", delay: 2000 },
 ];
 
 
@@ -43,7 +45,7 @@ function TypingIndicator() {
   )
 }
 
-export function ChatWidget() {
+export function ChatWidget2() {
   const [messages, setMessages] = useState<Message[]>([])
   const [isTyping, setIsTyping] = useState(false)
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0)

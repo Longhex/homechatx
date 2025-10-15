@@ -28,16 +28,17 @@ export default function RotatingIcons() {
   }, [])
 
   return (
-    <div className="relative w-[600px] h-[600px] flex items-center justify-center">
+    <div className="relative w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] md:w-[600px] md:h-[600px] flex items-center justify-center">
       {/* Outer circle ring */}
-      <div className="absolute w-[500px] h-[500px] rounded-full border-4 border-purple-200/40" />
+      <div className="absolute w-[240px] h-[240px] sm:w-[350px] sm:h-[350px] md:w-[500px] md:h-[500px] rounded-full border-4 border-purple-200/40" />
 
       {/* Inner circle ring */}
-      <div className="absolute w-[300px] h-[300px] rounded-full border-3 border-purple-200/40" />
+      <div className="absolute w-[150px] h-[150px] sm:w-[220px] sm:h-[220px] md:w-[300px] md:h-[300px] rounded-full border-2 border-purple-200/40" />
+
 
       {/* Outer icons */}
       <div
-        className="absolute w-[500px] h-[500px]"
+        className="absolute w-[240px] h-[240px] sm:w-[350px] sm:h-[350px] md:w-[500px] md:h-[500px]"
         style={{
           transform: `rotate(-${rotation}deg)`,
           transition: "transform 0.03s linear",
