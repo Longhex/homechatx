@@ -65,7 +65,19 @@ export function ChatWidget3() {
   }, [messages, isTyping])
 
   useEffect(() => {
-    if (currentMessageIndex >= conversationScript.length) return
+      // ❌ SỬA ĐOẠN NÀY ĐỂ TẠO VÒNG LẶP CHAT
+      if (currentMessageIndex >= conversationScript.length) {
+        // Khi kịch bản kết thúc (đã hiển thị hết tin nhắn)
+        const restartTimer = setTimeout(() => {
+          // 1. Xóa tất cả tin nhắn
+          setMessages([])
+          // 2. Reset index về 0 để bắt đầu lại
+          setCurrentMessageIndex(0)
+          // 3. (Tùy chọn) Thời gian chờ trước khi bắt đầu lại vòng mới (ví dụ: 5 giây)
+        }, 3000) // Chờ 5 giây sau khi kết thúc để bắt đầu lại
+  
+        return () => clearTimeout(restartTimer) // Cleanup cho timer restart
+      }
 
     const currentMsg = conversationScript[currentMessageIndex]
     const timer = setTimeout(() => {
