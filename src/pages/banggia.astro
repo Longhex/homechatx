@@ -55,15 +55,16 @@ import Fag from "@/components/landing/Fag.astro";
 
         <!-- Pricetable 2: MI-Agent AI, Gói 1 năm (Khi gạt switch) -->
         <div x-show="activeTab === 'ai-agent' && isYearly" x-cloak class="transition-all duration-500 ease-in-out transform">
-          <Tableprice2 />
+          <Tableprice />
         </div>
 
         <!-- Pricetable 3: Quản Trị (Khi bấm nút Quản Trị) -->
         <div x-show="activeTab === 'admin'" x-cloak class="transition-all duration-500 ease-in-out transform">
           <Tableprice3 />
+          <Fag />
         </div>
       </div>
-      <Fag />
+      
       
       
     </div>
