@@ -2,45 +2,10 @@
 // src/pages/banggia.astro
 ---
 
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bảng Giá Dịch Vụ AI - Kích Thước Biểu Tượng Lớn</title>
-    <!-- Tải Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Đảm bảo font Inter được sử dụng */
-        body { font-family: 'Inter', sans-serif; }
-        /* Class ẩn trên mobile để làm nền cho các gói đặc biệt */
-        .badge-popular {
-            top: 0;
-            right: 0;
-            background-color: #1e3a8a; /* blue-900 */
-            color: white;
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 0.25rem 0.75rem;
-            border-bottom-left-radius: 0.5rem;
-        }
-        /* Style để biểu tượng nổi bật, khắc phục lỗi hiển thị màu */
-        . {
-            font-size: 1.125rem; /* text-lg equivalent */
-            font-weight: 800; /* font-extrabold equivalent */
-            margin-right: 0.5rem;
-            display: inline-block;
-            width: 1.5rem; /* Giúp các dòng căn lề đồng nhất */
-        }
-    </style>
-</head>
-<body>
+
 
 <section class="py-16 md:py-20">
     <div class="max-w-[1600px] mx-auto px-4 lg:px-6">
-
-        <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-12">Bảng Giá & Tính Năng Chi Tiết</h2>
-
         <!-- Grid CHUNG (1 cột trên mobile, 5 cột trên desktop/tablet) -->
         <div class="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-4">
 
