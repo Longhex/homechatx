@@ -14,17 +14,17 @@ import Fag from "@/components/landing/Fag.astro";
   <section class="py-20 bg-gray-50" x-data="{ activeTab: 'ai-agent', isYearly: false }">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
       <!-- Tiêu đề -->
-      <div class="mb-10">
-        <h1 class="text-4xl md:text-4xl font-bold mb-3">
+      <div class="mb-5">
+        <h1 class="text-4xl md:text-4xl font-bold ">
           Bảng giá dịch vụ MI Agent AI
         </h1>
-        <h2 class="text-black text-xl font-semibold">
+        <h2 class="text-black text-xl font-semibold mt-3">
           Dịch vụ và tính năng mở rộng
         </h2>
       </div>
 
       <!-- Dòng 1: 2 nút chính (ngang hàng) -->
-      <div class="flex flex-wrap justify-center items-center gap-4 mb-6">
+      <div class="flex flex-wrap justify-center items-center gap-4 mb-0">
         
         <!-- Nút MI-Agent AI (Dẫn đến Table 1/2 + hiện Toggle) -->
         <button
@@ -46,7 +46,7 @@ import Fag from "@/components/landing/Fag.astro";
       
       
       <!-- Nội dung bảng giá -->
-      <div class="mt-10">
+      <div class="mt-0">
         
         <!-- Pricetable 1: MI-Agent AI, Gói 6 tháng (Mặc định ban đầu) -->
         <div x-show="activeTab === 'ai-agent' && !isYearly" x-cloak class="transition-all duration-500 ease-in-out transform">
