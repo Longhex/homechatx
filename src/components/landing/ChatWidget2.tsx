@@ -20,7 +20,7 @@ const conversationScript: (Message & { delay: number })[] = [
   { id: 2, type: "customer", content: "Ê lô", delay: 800 },
   { id: 3, type: "customer", content: "Shop ơi", delay: 800 },
   { id: 4, type: "customer", content: "Cho em hỏi cái áo form rộng màu be hôm qua em xem ấy\nCòn hàng không ạ?", delay: 1200 },
-  { id: 5, type: "agent", content: "Dạ em chào chị! 🌸\n\nMiAgent vừa nhận diện được hình ảnh và nội dung chị mô tả — áo form rộng màu be trong bộ sưu tập “Summer Breeze” đúng không ạ?", delay: 2500 },
+  { id: 5, type: "agent", content: "Dạ em chào chị! 🌸\n\nChatX vừa nhận diện được hình ảnh và nội dung chị mô tả — áo form rộng màu be trong bộ sưu tập “Summer Breeze” đúng không ạ?", delay: 2500 },
   { id: 6, type: "agent", content: "Mẫu này hiện còn đầy đủ size M, L, chất vải linen cao cấp, thoáng mát ạ.", delay: 1500 },
   { id: 7, type: "customer", content: "Đúng rồi đó, form này có co giãn không em?", delay: 2000 },
   { id: 8, type: "agent", content: "Dạ, vải linen nên không co giãn nhiều chị nhé, nhưng form rộng nên mặc vẫn thoải mái ạ.", delay: 2000 },
