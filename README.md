@@ -99,4 +99,4 @@ git add .
 git commit -m "Initial push to ahive.global"
 
 # Bước 6: Đẩy code lên nhánh chính (main hoặc master)
-git push -u origin master# homechatx
+git push -u origin master

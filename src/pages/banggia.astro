@@ -15,56 +15,17 @@ import Fag from "@/components/landing/Fag.astro";
     <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
       <!-- Tiêu đề -->
       <div class="mb-5">
-        <h1 class="text-4xl md:text-4xl font-bold ">
+        <h1 class="text-5xl md:text-4xl font-bold ">
           Bảng giá dịch vụ ChatX AI
         </h1>
-        <h2 class="text-black text-xl font-semibold mt-3">
+        <h2 class="text-gray-700 text-2xl font-semibold mt-3">
           Dịch vụ và tính năng mở rộng
         </h2>
       </div>
-
-      <!-- Dòng 1: 2 nút chính (ngang hàng) -->
-      <div class="flex flex-wrap justify-center items-center gap-4 mb-0">
-        
-        <!-- Nút ChatX AI (Dẫn đến Table 1/2 + hiện Toggle) -->
-        <button
-          @click="activeTab = 'ai-agent'; isYearly = false"
-          :class="activeTab === 'ai-agent' ? 'bg-[#7a76fc]/60 text-white shadow-lg' : 'bg-gray-200 text-black hover:bg-gray-300'"
-          class="px-8 py-3 rounded-full font-medium transition duration-300 transform hover:scale-105">
-          ChatX AI
-        </button>
-
-        <!-- Nút Quản Trị (Dẫn đến Table 3 + ẩn Toggle) -->
-        <button
-          @click="activeTab = 'admin'"
-          :class="activeTab === 'admin' ? 'bg-[#7a76fc]/60 text-white shadow-lg' : 'bg-gray-300 text-black hover:bg-gray-300'"
-          class="px-8 py-3 rounded-full font-medium transition duration-300 transform hover:scale-105">
-          Quản Trị
-        </button>
-      </div>
-
+      <div class="mt-0"><Tableprice /></div>
       
-      
-      <!-- Nội dung bảng giá -->
-      <div class="mt-0">
-        
-        <!-- Pricetable 1: ChatX AI, Gói 6 tháng (Mặc định ban đầu) -->
-        <div x-show="activeTab === 'ai-agent' && !isYearly" x-cloak class="transition-all duration-500 ease-in-out transform">
-          <Tableprice />
-        </div>
 
-        <!-- Pricetable 2: ChatX AI, Gói 1 năm (Khi gạt switch) -->
-        <div x-show="activeTab === 'ai-agent' && isYearly" x-cloak class="transition-all duration-500 ease-in-out transform">
-          <Tableprice />
-        </div>
 
-        <!-- Pricetable 3: Quản Trị (Khi bấm nút Quản Trị) -->
-        <div x-show="activeTab === 'admin'" x-cloak class="transition-all duration-500 ease-in-out transform">
-          <Tableprice3 />
-          <Fag />
-        </div>
-      </div>
-      
       
       
     </div>
