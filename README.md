@@ -100,3 +100,62 @@ git commit -m "Initial push to ahive.global"
 
 # Bước 6: Đẩy code lên nhánh chính (main hoặc master)
 git push -u origin master
+
+
+
+
+
+
+
+
+
+🚀 CÁC BƯỚC ĐẨY CODE CÓ SẴN LÊN GITHUB (KHÔNG CLONE)
+🧩 1. Khởi tạo Git trong thư mục code
+
+Mở Terminal tại thư mục dự án của anh:
+
+cd /đường_dẫn_tới_thư_mục_code
+
+
+Nếu thư mục chưa có Git:
+
+git init
+
+🔗 2. Kết nối tới repo GitHub
+
+Thêm remote origin trỏ tới repo của anh:
+
+git remote add origin https://github.com/Longhex/homechatx.git
+
+
+Nếu đã có remote trước đó và muốn đổi:
+
+git remote set-url origin https://github.com/Longhex/homechatx.git
+
+📝 3. Commit toàn bộ code hiện tại
+git add .
+git commit -m "initial commit or update project"
+
+🚀 4. Push code lên branch chính (ví dụ main)
+
+Nếu repo GitHub mới hoặc chưa có gì, anh có thể push thẳng:
+
+git branch -M main
+git push -u origin main
+
+⚠️ Nếu repo trên GitHub đã có code trước đó
+
+Và anh muốn ghi đè hoàn toàn bằng code local (cẩn thận):
+
+git push origin main --force
+
+
+Nếu Git báo lỗi do khác lịch sử (fatal: refusing to merge unrelated histories), thêm flag này:
+
+git push origin main --force --allow-unrelated-histories
+
+✅ Xong rồi anh có thể kiểm tra lại:
+git remote -v
+
+
+để đảm bảo đang push đúng repo homechatx.
